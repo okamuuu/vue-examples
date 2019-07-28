@@ -4,6 +4,10 @@ module.exports = {
     //    '../node_modules/bulma-extensions/dist/css/bulma-extensions.min.css',
   ],
 
+  plugins: [
+    { src: '~/plugins/highlight.js', ssr: false}, 
+  ],
+
   modules: [
     //    '@nuxtjs/axios',
     '@nuxtjs/bulma',
@@ -27,6 +31,4 @@ module.exports = {
       }
     }
   },
-  plugins: [
-  ]
 }

@@ -17,20 +17,18 @@
           <div class="navbar-item has-dropdown is-hoverable">
             <a class="navbar-link" @click="() => push('/vue-chart')">vue-chart.js</a>
             <div class="navbar-dropdown">
-              <a class="navbar-item">example 1</a>
-              <a class="navbar-item">example 2</a>
-              <a class="navbar-item">code 1</a>
-              <a class="navbar-item">code 2</a>
+              <a class="navbar-item" @click="() => push('/vue-chart/example')">example</a>
+              <a class="navbar-item" @click="() => push('/vue-chart/code')">code</a>
             </div>
           </div>
 
           <div class="navbar-item has-dropdown is-hoverable">
-            <a class="navbar-link">vue-draggable</a>
+            <a @click="() => push('/vue-draggable/')" class="navbar-link">vue-draggable</a>
             <div class="navbar-dropdown">
-              <a class="navbar-item">example 1</a>
-              <a class="navbar-item">example 2</a>
-              <a class="navbar-item">code 1</a>
-              <a class="navbar-item">code 2</a>
+              <a @click="() => push('/vue-draggable/sort/')" class="navbar-item">sort</a>
+              <a @click="() => push('/vue-draggable/sort/code/')" class="navbar-item">sort code</a>
+              <a @click="() => push('/vue-draggable/swap/')" class="navbar-item">swap</a>
+              <a @click="() => push('/vue-draggable/swap/code/')" class="navbar-item">swap code</a>
             </div>
           </div>
 
@@ -50,6 +48,7 @@
 export default {
   methods: {
     push(path) {
+      console.log(path)
       this.$router.push(path)
     }
   }

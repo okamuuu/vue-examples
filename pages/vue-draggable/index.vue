@@ -3,8 +3,8 @@
     <div class="container">
       <div class="columns">
         <div class="column">
-          <h1 class="title">vue-chart.js Demo</h1>
-          <p>Demo for Ginza.js#3 at plaid</p>
+          <h1 class="title">Vue.Draggable Demo</h1>
+          <p>Demo for Meguro.es#21 at Vizasq</p>
           <p>Tokyo/Japan</p>
         </div>
       </div>
@@ -15,12 +15,6 @@
 <script>
 
 export default {
-  components: {
-  },
-  computed: {
-  },
-  methods: {
-  }
 }
 </script>
 
