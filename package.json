@@ -1,0 +1,22 @@
+{
+  "name": "vue-examples",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "dev": "nuxt"
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.0.2",
+    "eslint": "^6.1.0",
+    "eslint-loader": "^2.2.1",
+    "eslint-plugin-vue": "^5.2.3",
+    "nuxt": "^2.8.1"
+  },
+  "dependencies": {
+    "@nuxtjs/bulma": "^1.2.4",
+    "@nuxtjs/toast": "^3.2.1",
+    "chart.js": "^2.8.0",
+    "vue-chartjs": "^3.4.2"
+  }
+}
