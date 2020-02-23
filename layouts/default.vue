@@ -12,7 +12,7 @@
     
         <div class="navbar-start">
           
-          <a class="navbar-item">vue-examples</a>
+          <a class="navbar-item" @click="() => push('/')">vue-examples</a>
 
           <div class="navbar-item has-dropdown is-hoverable">
             <a class="navbar-link" @click="() => push('/vue-chart')">vue-chart.js</a>
@@ -32,6 +32,13 @@
             </div>
           </div>
 
+          <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link" @click="() => push('/vue-form-validation')">vue form validation</a>
+            <div class="navbar-dropdown">
+              <a class="navbar-item" @click="() => push('/vue-form-validation/example')">example</a>
+              <a class="navbar-item" @click="() => push('/vue-form-validation/code')">code</a>
+            </div>
+          </div>
 
         </div>
       </div>
@@ -40,6 +47,13 @@
       <div class="container">
         <nuxt />
       </div>
+      <footer class="footer">
+        <div class="content has-text-centered">
+          <p>
+            <a href="https://github.com/okamuuu/vue-examples">Github</a>
+          </p>
+        </div>
+      </footer>
     </div>
   </div>
 </template>
