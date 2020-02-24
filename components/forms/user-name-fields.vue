@@ -49,7 +49,7 @@ export default {
   props: ['onChange'],
   data () {
     return {
-      forms: {},
+      fields: {},
       errors: {},
     }
   },
@@ -59,7 +59,7 @@ export default {
       this.errors = Object.assign({}, validate(this.forms))
       this.onChange({
         isValid: !this.errors,
-        forms: this.forms 
+        fields: this.fields
       })
     }
   }

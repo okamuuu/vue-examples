@@ -14,12 +14,12 @@
                 <InputTextField
                   placeholder="姓"
                   :errorMessages="errors.lastNameKanji"
-                  :onChange="(value) => handleChangeForms({lastNameKanji: value})"
+                  :onChange="(value) => handleChangeFileds({lastNameKanji: value})"
                 />
                 <InputTextField
                   placeholder="名"
                   :errorMessages="errors.firstNameKanji"
-                  :onChange="(value) => handleChangeForms({firstNameKanji: value})"
+                  :onChange="(value) => handleChangeFileds({firstNameKanji: value})"
                 />
               </div>
             </div>
@@ -32,12 +32,12 @@
                 <InputTextField
                   placeholder="セイ"
                   :errorMessages="errors.lastNameKana"
-                  :onChange="(value) => handleChangeForms({lastNameKana: value})"
+                  :onChange="(value) => handleChangeFileds({lastNameKana: value})"
                 />
                 <InputTextField
                   placeholder="メイ"
                   :errorMessages="errors.firstNameKana"
-                  :onChange="(value) => handleChangeForms({firstNameKana: value})"
+                  :onChange="(value) => handleChangeFileds({firstNameKana: value})"
                 />
               </div>
             </div>
@@ -50,11 +50,11 @@
                 <div class="field is-narrow">
                   <div class="control">
                     <label class="radio">
-                      <input v-model="forms.gender" type="radio" value="M">
+                      <input v-model="fields.gender" type="radio" value="M">
                       男性
                     </label>
                     <label class="radio">
-                      <input v-model="forms.gender" type="radio" value="F">
+                      <input v-model="fields.gender" type="radio" value="F">
                       女性
                     </label>
                   </div>
@@ -68,9 +68,9 @@
               </div>
               <div class="field-body">
                 <BirthdayField
-                  :value="forms.birthday"
+                  :value="fields.birthday"
                   :errorMessages="errors.birthday"
-                  :onChange="(birthday) => handleChangeForms({birthday})"
+                  :onChange="(birthday) => handleChangeFileds({birthday})"
                 />
               </div>
             </div>
@@ -83,7 +83,7 @@
                 <InputTextField
                   placeholder="郵便番号"
                   :errorMessages="errors.zipcode"
-                  :onChange="(value) => handleChangeForms({zipcode: value})"
+                  :onChange="(value) => handleChangeFileds({zipcode: value})"
                 />
               </div>
             </div>
@@ -91,9 +91,9 @@
         </div>
         <div class="column">
           <div class="section">
-            <h2 class="title">Forms</h2>
+            <h2 class="title">Fields</h2>
             <pre><code>
-            {{ forms }}
+            {{ fields }}
             </code></pre>
           </div>
           <div class="section">
@@ -120,14 +120,14 @@ export default {
   },
   data () {
     return {
-      forms: {},
+      fields: {},
       errors: {}
     }
   },
   methods: {
-    async handleChangeForms (obj) {
-      this.forms = { ...this.forms, ...obj }
-      this.errors = Object.assign({}, validate(this.forms))
+    async handleChangeFileds (obj) {
+      this.fields = { ...this.fields, ...obj }
+      this.errors = Object.assign({}, validate(this.fields))
     }
   }
 }
@@ -139,17 +139,6 @@ em {
   background: linear-gradient(transparent 75%, #89BDDE 0%);
 }
 
-.ghost,
-.sortable-chosen {
-  color: #fff;
-  background-color: #3273dc;
-}
-.movable {
-  cursor: move;
-}
-p {
-   transition: width 2s;
-}
 p, pre {
   font-size: 1.5em;
 }
