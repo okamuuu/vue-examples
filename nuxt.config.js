@@ -1,11 +1,11 @@
 module.exports = { 
   mode: 'spa',
   css: [
-    //    '../node_modules/bulma-extensions/dist/css/bulma-extensions.min.css',
+    "@fortawesome/fontawesome-svg-core/styles.css",
   ],
-
   plugins: [
     { src: '~/plugins/highlight.js', ssr: false}, 
+    { src: "~/plugins/fontawesome", ssr: false },
   ],
 
   modules: [

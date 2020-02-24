@@ -31,8 +31,7 @@ export default {
   },
   methods: {
     handleChange (e) {
-      const { value } = e.target
-      this.onChange(value)
+      this.onChange(e.target.value)
       this.pristine = false
     }
   }
