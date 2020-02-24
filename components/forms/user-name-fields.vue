@@ -39,7 +39,8 @@
 </template>
 
 <script>
-import { validate } from '~/utils/validator'
+import * as _ from 'lodash'
+import { validateWithRuleNames } from '~/utils/validator'
 import InputTextField from '~/components/forms/input-text-field'
 
 export default {
@@ -51,14 +52,24 @@ export default {
     return {
       fields: {},
       errors: {},
+      ruleNames: [
+        'lastNameKanji',
+        'firstNameKanji', 
+        'lastNameKana', 
+        'firstNameKana'
+      ]
     }
   },
   methods: {
-    async handleChangeFields (obj) {
-      this.forms = { ...this.forms, ...obj }
-      this.errors = Object.assign({}, validate(this.forms))
+    handleChangeFields (fields) {
+      this.fields = { ...this.fields, ...fields }
+      this.errors = Object.assign(
+        {}, 
+        validateWithRuleNames(this.fields, this.ruleNames)
+      )
+      console.log(this.errors)
       this.onChange({
-        isValid: !this.errors,
+        isValid: Object.keys(this.errors).length === 0,
         fields: this.fields
       })
     }

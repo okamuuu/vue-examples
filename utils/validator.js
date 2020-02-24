@@ -45,9 +45,18 @@ Validator.register(
 )
 
 /* eslint-eable no-control-regex */
-
 export function validate (obj) {
   const v = new Validator(obj, rules)
+  v.setAttributeNames(attributeNames)
+
+  if (v.passes()) {
+    return null
+  }
+  return v.errors.errors
+}
+
+export function validateWithRuleNames (obj, ruleNames) {
+  const v = new Validator(obj, _.pick(rules, ruleNames))
   v.setAttributeNames(attributeNames)
 
   if (v.passes()) {

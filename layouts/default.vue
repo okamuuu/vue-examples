@@ -36,7 +36,7 @@
             <a class="navbar-link" @click="() => push('/vue-form-validation')">vue form validation</a>
             <div class="navbar-dropdown">
               <a class="navbar-item" @click="() => push('/vue-form-validation/example')">example</a>
-              <a class="navbar-item" @click="() => push('/vue-form-validation/code')">code</a>
+              <a class="navbar-item" @click="() => push('/vue-form-validation/example2')">example2</a>
             </div>
           </div>
 
