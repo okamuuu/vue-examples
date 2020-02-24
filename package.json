@@ -4,13 +4,17 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "dev": "nuxt"
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "predeploy": "DEPLOY_ENV=GH_PAGES npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "devDependencies": {
     "babel-eslint": "^10.0.2",
     "eslint": "^6.1.0",
     "eslint-loader": "^2.2.1",
     "eslint-plugin-vue": "^5.2.3",
+    "gh-pages": "^2.2.0",
     "nuxt": "^2.8.1"
   },
   "dependencies": {

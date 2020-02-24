@@ -1,5 +1,8 @@
 module.exports = { 
   mode: 'spa',
+  router: {
+    base: process.env.DEPLOY_ENV === 'GH_PAGES' ? '/vue-examples/' : '/'
+  },
   css: [
     "@fortawesome/fontawesome-svg-core/styles.css",
   ],
